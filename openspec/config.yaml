@@ -1,13 +1,14 @@
 schema: spec-driven
 
-# Project context (High-density SOP 2.0 FOUNDRY alignment)
+# Project context (Job-Filter-Wizard Workshop alignment)
 context: |
-  This project is the YOU-DRIVE-SOP FOUNDRY (Central Lab).
-  - Foundry Root: D:/AI project/YOU-DRIVE-SOP
-  - Role: Intelligence Source for all Workshops.
-  - Core Protocols: Refer to 'openspec/specs/foundry-protocols/spec.md'.
-  - VCS Mandate: Use 'gh' CLI for GitHub Issue/PR automation.
-  - Security Mandate: Every file modification MUST be through 'meta-safe-executor'.
+  This project is the Job-Filter-Wizard Workshop (Recruitment Filtering Tool).
+  - Mother-Base: D:/AI project/YOU-DRIVE-SOP
+  - Role: Intelligent recruitment data extraction & filtering.
+  - Core Logic: DeepSeek API + MD5 Fingerprint Deduplication.
+  - Storage: Recruitment data is stored in 'storage/jobs/' as GFM Markdown tables.
+  - VCS Mandate: Follow the 12-Step Protocol (Branching: task/N or issue-N).
+  - Security Mandate: DEEPSEEK_API_KEY MUST NOT be logged or committed.
 
 # Per-artifact rules
 rules:
@@ -15,24 +16,35 @@ rules:
     - Each implementation task MUST include a 'Validation' step.
     - Reference the 'meta-safe-executor' skill for any destructive operations.
     - "Integrity Check: Every task list MUST start with '## 1. 规约与环境自检 (Mandatory Setup)' including branch check and audit logs."
-    - "Integrity Check: Every task list MUST end with 'Process Compliance Verification' (Logs, Language, PR)."
   proposal:
-    - Automatically create a GitHub Issue if none exists, or link to current issue.
-    - "Automation: 'git checkout -b issue-N' MUST be done before implementation."
-    - "Contribution Check: Must identify potential patterns for 'patterns/' or skills for '.gemini/skills/'."
+    - "Input Check: Must verify 'City', 'Job/Skill', and '3-month Time Window' requirements."
+    - "Contribution Check: Identify generic deduplication or prompt patterns for Foundry reflection."
   archive:
-    - Closure: Automatically generate PR description and link to archived assets.
-    - Decision: Mandatory creation of ADR in 'openspec/decisions/' during archive.
-    - Verification: Run 'npm test' or equivalent in Foundry root to ensure asset integrity.
+    - Closure: Automatically generate summary of new jobs extracted.
+    - Distill: Trigger 'meta-distiller' to reflect generic logic (e.g. fingerprinting) back to Foundry.
+
+# Business Config (Job-Filter-Wizard Specifics)
+business:
+  deepseek:
+    model: "deepseek-chat"
+    temperature: 0.1
+    max_tokens: 4096
+  storage:
+    jobs_dir: "storage/jobs/"
+    naming_convention: "[YYYYMMDD]_[SEARCH_TERM].md"
+  logic:
+    time_window_months: 3
+    fingerprint_algo: "Normalize(Company) + '_' + Normalize(Job)"
 
 # Task templates
 templates:
   tasks: |
     ## 1. 规约与环境自检 (Mandatory Setup)
 
-    - [ ] 1.1 确认当前分支为 `issue-N` 或 `task/N` 分支（禁止在 main 直接操作）
+    - [ ] 1.1 确认当前分支为 `issue-N` 或 `task/N` 分支 (禁止在 main 直接操作)
     - [ ] 1.2 确认已在 `.gemini/ops_changelog.md` 记录本次操作表格
-    - [ ] 1.3 执行 `activate_skill verification-before-completion` 预载验证逻辑
+    - [ ] 1.3 确认 `.env` 中已配置 `DEEPSEEK_API_KEY`
+    - [ ] 1.4 确认 `storage/jobs/` 目录已就绪 (用于加载历史指纹)
 
     ## 2. 核心实施 (Core Implementation)
 
@@ -42,12 +54,12 @@ templates:
     ## 3. 过程合规性校验 (Compliance Verification)
 
     - [ ] 3.1 确认所有写操作均有审计记录
-    - [ ] 3.2 确认 PR 描述已准备就绪
-    - [ ] 3.3 确认资产已提纯并反哺至 patterns/ 或 .gemini/skills/
+    - [ ] 3.2 确认抓取结果严格符合地理位置与时间窗口规约
+    - [ ] 3.3 确认资产已在归档前经用户确认执行提纯 (Distill)
 
 # Skill Linkage (Standard SOP 2.0 Skills)
 skills:
   safety: D:/AI project/YOU-DRIVE-SOP/.gemini/skills/meta-safe-executor/SKILL.md
   distiller: D:/AI project/YOU-DRIVE-SOP/.gemini/skills/meta-distiller/SKILL.md
   debugging: D:/AI project/YOU-DRIVE-SOP/.gemini/skills/systematic-debugging/SKILL.md
-  foundry_init: D:/AI project/YOU-DRIVE-SOP/.gemini/skills/foundry-initializing/SKILL.md
+  workshop_init: D:/AI project/YOU-DRIVE-SOP/.gemini/skills/workshop-initializing/SKILL.md

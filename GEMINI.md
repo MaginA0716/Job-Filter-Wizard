@@ -1,4 +1,4 @@
-# 🚀 YOU-DRIVE-SOP 快速操作看板 (Workshop)
+# 🚀 Job-Filter-Wizard 快速操作看板 (Workshop)
 
 > **"AI 驱动逻辑，你驱动规约。"**
 
@@ -11,14 +11,14 @@
 
 ## 常用指令集
 ### 场景 A：新功能开发 (Feature)
-- `/opsx:propose "功能名称"` —— 发起新功能提案。
-- `/opsx:apply` —— 按照 `tasks.md` 步进执行任务。
-- `/opsx:verify` —— 物理核对规格 Scenario 是否达成。
+- `/opsx:propose "智能招聘过滤核心"` —— 发起新功能提案。
+- `/opsx:apply` —— 按照 `tasks.md` 步进执行任务（如：DeepSeek Prompt 优化）。
+- `/opsx:verify` —— 物理核对规格 Scenario 是否达成（如：城市/时间窗口过滤精度）。
 
-### 场景 B：资产提纯与维护 (Maintenance)
-- `activate_skill meta-distiller` —— 执行逻辑提取与参数化。
-- `activate_skill workshop-sync` —— **[Copied 模式专用]** 拉取母库最新更新。
-- `/opsx:archive` —— 执行智力资产反哺并归档变更。
+### 场景 B：业务逻辑提纯与维护 (Maintenance)
+- `activate_skill meta-distiller` —— 执行「招聘指纹算法」等通用逻辑的提取。
+- `activate_skill workshop-sync` —— **[Copied 模式专用]** 拉取母库最新治理规约更新。
+- `/opsx:archive` —— 执行业务智力资产反哺并归档变更。
 
 ## 🚦 状态查询指令
 您可以随时向 AI 发起以下查询，以确认物理对齐状态：
@@ -26,4 +26,4 @@
 - 『**我接下来该做什么？**』 —— AI 将根据 `ops_changelog.md` 和 `tasks.md` 给出下一步建议。
 
 ## 行为约束
-- 所有的 AI 操作必须遵循 [母库全局标准](./.gemini/global_standard.md) 与 [代理协议](./AGENTS.md)。
+- 所有的 AI 操作必须遵循 [子库全局标准](./.gemini/global_standard.md) 与 [代理协议](./AGENTS.md)。
