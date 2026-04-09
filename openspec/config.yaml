@@ -1,0 +1,53 @@
+schema: spec-driven
+
+# Project context (High-density SOP 2.0 FOUNDRY alignment)
+context: |
+  This project is the YOU-DRIVE-SOP FOUNDRY (Central Lab).
+  - Foundry Root: D:/AI project/YOU-DRIVE-SOP
+  - Role: Intelligence Source for all Workshops.
+  - Core Protocols: Refer to 'openspec/specs/foundry-protocols/spec.md'.
+  - VCS Mandate: Use 'gh' CLI for GitHub Issue/PR automation.
+  - Security Mandate: Every file modification MUST be through 'meta-safe-executor'.
+
+# Per-artifact rules
+rules:
+  tasks:
+    - Each implementation task MUST include a 'Validation' step.
+    - Reference the 'meta-safe-executor' skill for any destructive operations.
+    - "Integrity Check: Every task list MUST start with '## 1. 规约与环境自检 (Mandatory Setup)' including branch check and audit logs."
+    - "Integrity Check: Every task list MUST end with 'Process Compliance Verification' (Logs, Language, PR)."
+  proposal:
+    - Automatically create a GitHub Issue if none exists, or link to current issue.
+    - "Automation: 'git checkout -b issue-N' MUST be done before implementation."
+    - "Contribution Check: Must identify potential patterns for 'patterns/' or skills for '.gemini/skills/'."
+  archive:
+    - Closure: Automatically generate PR description and link to archived assets.
+    - Decision: Mandatory creation of ADR in 'openspec/decisions/' during archive.
+    - Verification: Run 'npm test' or equivalent in Foundry root to ensure asset integrity.
+
+# Task templates
+templates:
+  tasks: |
+    ## 1. 规约与环境自检 (Mandatory Setup)
+
+    - [ ] 1.1 确认当前分支为 `issue-N` 或 `task/N` 分支（禁止在 main 直接操作）
+    - [ ] 1.2 确认已在 `.gemini/ops_changelog.md` 记录本次操作表格
+    - [ ] 1.3 执行 `activate_skill verification-before-completion` 预载验证逻辑
+
+    ## 2. 核心实施 (Core Implementation)
+
+    - [ ] 2.1 <!-- Task description -->
+    - [ ] 2.2 <!-- Task description -->
+
+    ## 3. 过程合规性校验 (Compliance Verification)
+
+    - [ ] 3.1 确认所有写操作均有审计记录
+    - [ ] 3.2 确认 PR 描述已准备就绪
+    - [ ] 3.3 确认资产已提纯并反哺至 patterns/ 或 .gemini/skills/
+
+# Skill Linkage (Standard SOP 2.0 Skills)
+skills:
+  safety: D:/AI project/YOU-DRIVE-SOP/.gemini/skills/meta-safe-executor/SKILL.md
+  distiller: D:/AI project/YOU-DRIVE-SOP/.gemini/skills/meta-distiller/SKILL.md
+  debugging: D:/AI project/YOU-DRIVE-SOP/.gemini/skills/systematic-debugging/SKILL.md
+  foundry_init: D:/AI project/YOU-DRIVE-SOP/.gemini/skills/foundry-initializing/SKILL.md
