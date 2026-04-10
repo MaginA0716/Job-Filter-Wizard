@@ -18,7 +18,7 @@ rules:
     - "Integrity Check: Every task list MUST start with '## 1. 规约与环境自检 (Mandatory Setup)' including branch check and audit logs."
   proposal:
     - "Input Check: Must verify 'City', 'Job/Skill', and '3-month Time Window' requirements."
-    - "Contribution Check: Identify generic deduplication or prompt patterns for Foundry reflection."
+    - 'Contribution Check: Identify generic deduplication or prompt patterns for Foundry reflection.'
   archive:
     - Closure: Automatically generate summary of new jobs extracted.
     - Distill: Trigger 'meta-distiller' to reflect generic logic (e.g. fingerprinting) back to Foundry.
@@ -26,12 +26,12 @@ rules:
 # Business Config (Job-Filter-Wizard Specifics)
 business:
   deepseek:
-    model: "deepseek-chat"
+    model: 'deepseek-chat'
     temperature: 0.1
     max_tokens: 4096
   storage:
-    jobs_dir: "storage/jobs/"
-    naming_convention: "[YYYYMMDD]_[SEARCH_TERM].md"
+    jobs_dir: 'storage/jobs/'
+    naming_convention: '[YYYYMMDD]_[SEARCH_TERM].md'
   logic:
     time_window_months: 3
     fingerprint_algo: "Normalize(Company) + '_' + Normalize(Job)"
@@ -54,7 +54,7 @@ templates:
     ## 3. 过程合规性校验 (Compliance Verification)
 
     - [ ] 3.1 确认所有写操作均有审计记录
-    - [ ] 3.2 确认抓取结果严格符合地理位置与时间窗口规约
+    - [ ] 3.2 确认检索结果严格符合地理位置与时间窗口规约
     - [ ] 3.3 确认资产已在归档前经用户确认执行提纯 (Distill)
 
 # Skill Linkage (Standard SOP 2.0 Skills)

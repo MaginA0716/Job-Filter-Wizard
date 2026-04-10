@@ -2,3 +2,6 @@
 .gemini/skills/
 patterns/
 .gemini/link.json
+.env
+node_modules
+.env.example
